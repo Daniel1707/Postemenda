@@ -3,10 +3,9 @@ source 'https://rubygems.org'
 gem 'rack'
 gem 'rack-test'
 gem 'sinatra'
-<<<<<<< HEAD
-gem 'RSpec'
-=======
->>>>>>> 5b00d2d9d4da42a172b945dc76f1fe04bfde7a50
+gem 'rspec', '3.6'
+gem 'rack-test'
+gem 'rspec-expectations', '3.6'
 
 group :development do
   gem 'pry-byebug'
