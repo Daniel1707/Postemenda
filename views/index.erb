@@ -3,16 +3,12 @@
    <head>
       <title>Info Page</title>
        <link rel="stylesheet" type="text/css" href="css/style.css">
-       <script src="js/function.js"></script>
+       <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+       <script src="js/function.js">
+       </script>
    </head>
    <body>
       <h1>Frango Robo</h1>
-
-      <fieldset id="buildyourform">
-          <legend>Build your own form!</legend>
-      </fieldset>
-      <input type="button" value="Preview form" class="add" id="preview" />
-      <input type="button" value="Add a field" class="add" id="add" />
 
       <form method="POST" action="/request">
          <p>
@@ -24,6 +20,11 @@
                <option value="patch">Patch</option>
             </select>
          </p>
+
+         <div class="input_fields_wrap">
+             <button class="add_field_button">Add More Fields</button>
+         </div>
+
          <p>path: <input type="text" name="path">
          <p/>
          <!-- <p>header: <input type="text" name="post[headers][autenticacao]"></p>
