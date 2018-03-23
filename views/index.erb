@@ -2,9 +2,18 @@
 <html>
    <head>
       <title>Info Page</title>
+       <link rel="stylesheet" type="text/css" href="css/style.css">
+       <script src="js/function.js"></script>
    </head>
    <body>
       <h1>Frango Robo</h1>
+
+      <fieldset id="buildyourform">
+          <legend>Build your own form!</legend>
+      </fieldset>
+      <input type="button" value="Preview form" class="add" id="preview" />
+      <input type="button" value="Add a field" class="add" id="add" />
+
       <form method="POST" action="/request">
          <p>
             <select name="request_method">
@@ -17,7 +26,9 @@
          </p>
          <p>path: <input type="text" name="path">
          <p/>
-         <p>header: <input type="text" name="headers"></p>
+         <!-- <p>header: <input type="text" name="post[headers][autenticacao]"></p>
+         <p>header: <input type="text" name="post[headers][frango]"></p> -->
+
          <p>body: <textarea rows="4" name="body" cols="50">
             </textarea>
          </p>

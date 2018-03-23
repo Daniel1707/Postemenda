@@ -2,6 +2,7 @@ require 'sinatra'
 require 'json'
 
 set :bind, '0.0.0.0'
+set :public_folder, Proc.new { File.join(File.dirname(__FILE__), 'public') }
 
 get '/' do
   erb :index
@@ -13,5 +14,5 @@ post '/request' do
    body = params[:body]
    path = params[:path]
 
-    params.to_s
+   params.to_s
 end
