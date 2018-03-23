@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
-=======
 gem 'rack'
 gem 'rack-test'
->>>>>>> a393c3e8a65cc753c08297e3e8ea608343297153
 gem 'sinatra'
+<<<<<<< HEAD
 gem 'RSpec'
+=======
+>>>>>>> 5b00d2d9d4da42a172b945dc76f1fe04bfde7a50
 
 group :development do
   gem 'pry-byebug'
