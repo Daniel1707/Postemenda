@@ -1,15 +1,17 @@
-require '../../lib/requests'
+require '../../controllers/request_controller'
 require 'json'
 
 header = Hash.new
-header[:path] = 'https://homolog.moip.com.br/v2/entries?filters=event::eq(PAY-AELOGYEAJWT4)'
-header[:body] = ''
+
+#header[:body] = ''
 header[:authorization] = 'Basic  NVFFUzVLR1I5Tk5FMDA4RVVGWlJEQ0RCTk8xVkhDRVo6UlRLSUNDTDFOSE4xQVZJTlVUTkJYWFFPTUxQNVdSWExVM0JUVVVLUw=='
 
 body = ''
 
 path = 'https://homolog.moip.com.br/v2/entries?filters=event::eq(PAY-AELOGYEAJWT4)'
 
-test = Requests.send_values('get', header, body, path)
+nome = RequestController.new("get", header, body, path)
 
-p test.to_json
+p nome.call_request.to_json
+
+#type, headers, body, path

@@ -1,7 +1,7 @@
 require 'rest-client'
 
 class Requests
-  def self.send(type, headers, body, path)
+  def self.send_values(type, headers, body, path)
     begin
       if body.eql? ''
         response = RestClient.send(type, *[path, headers])
