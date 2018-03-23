@@ -1,5 +1,9 @@
 require 'sinatra'
+require 'json'
 
-  get '/teste' do
-    p "teste"
-  end
+
+set :bind, '0.0.0.0'
+
+get '/' do
+  'Frango robo'
+end

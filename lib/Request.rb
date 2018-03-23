@@ -5,7 +5,7 @@ class Requests
     rescue Exception => detail
       response = detail.response
     ensure
-      return Shind.generateResponse(response)
+      return ''
     end
   end
 
