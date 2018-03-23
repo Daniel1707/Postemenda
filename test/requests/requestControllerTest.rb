@@ -1,4 +1,5 @@
 require '../../controllers/request_controller'
+require 'json'
 
 header = Hash.new
 
@@ -10,5 +11,7 @@ body = ''
 path = 'https://homolog.moip.com.br/v2/entries?filters=event::eq(PAY-AELOGYEAJWT4)'
 
 nome = RequestController.new("get", header, body, path)
+
+p nome.call_request.to_json
 
 #type, headers, body, path

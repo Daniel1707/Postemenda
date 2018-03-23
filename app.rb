@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'json'
-require './lib/requests'
+require './controllers/request_controller'
 
 
 set :bind, '0.0.0.0'
@@ -16,10 +16,11 @@ end
 
 post '/request' do
    request_method = params[:request_method]
-   headers = params[:values].to_h
+   headers = Hash[*params[:values]]
    body = params[:body]
    path = params[:path]
 
-   response = Requests.send(request_method,headers,body,path)
-   "RESPONSE>>>> #{response}"
+   request_controller = RequestController.new(request_method, headers, body, path)
+   reponse = request_controller.call_request
+   "RESPONSE>>>> #{reponse.to_s}"
 end

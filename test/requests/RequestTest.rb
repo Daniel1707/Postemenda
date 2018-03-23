@@ -10,6 +10,6 @@ body = ''
 
 path = 'https://homolog.moip.com.br/v2/entries?filters=event::eq(PAY-AELOGYEAJWT4)'
 
-test = Requests.send('get', header, body, path)
+test = Requests.send_values('get', header, body, path)
 
 p test.to_json
