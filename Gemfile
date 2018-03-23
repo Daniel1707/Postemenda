@@ -4,7 +4,6 @@ gem 'rack'
 gem 'rack-test'
 gem 'sinatra'
 <<<<<<< HEAD
-gem 'RSpec'
 =======
 >>>>>>> 5b00d2d9d4da42a172b945dc76f1fe04bfde7a50
 

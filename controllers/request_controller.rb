@@ -1,4 +1,5 @@
 require 'requests'
+require '../lib/requests'
 
 class RequestController
 
@@ -20,6 +21,10 @@ class RequestController
     if value.eql?(false)
       raise "Type informed [#{@type}] is incorrect. You have to use one of the followings types: post, get, put, delete, patch"
     end
+  end
+
+  def call_request
+    Requests.send(@type, @headers, @body, @path)
   end
 
 end

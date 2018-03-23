@@ -1,8 +1,13 @@
-class Requests
+require 'rest-client'
 
+class Requests
   def self.send(type, headers, body, path)
     begin
-      response = RestClient.send(type) path, body.to_json, headers
+      if body.eql? ''
+        response = RestClient.send(type, *[path, headers])
+      else
+        response = RestClient.send(type, *[path, body, headers])
+      end
     rescue Exception => detail
       response = detail.response
     ensure
