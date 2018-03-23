@@ -1,4 +1,5 @@
 require 'rest-client'
+require './controllers/response_controller'
 
 class Requests
   def self.send_values(type, headers, body, path)
@@ -11,6 +12,8 @@ class Requests
     rescue Exception => detail
       response = detail.response
     ensure
+      response_1 = ResponseController.process_response(response)
+
       return response
     end
   end
