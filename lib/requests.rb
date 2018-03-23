@@ -1,8 +1,8 @@
 class Requests
 
-  def self.send(method_name, headers, body, path)
+  def self.send(type, headers, body, path)
     begin
-      response = RestClient.send(method_name) path, body.to_json, headers
+      response = RestClient.send(type) path, body.to_json, headers
     rescue Exception => detail
       response = detail.response
     ensure

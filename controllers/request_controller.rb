@@ -5,7 +5,7 @@ class RequestController
   attr_accessor :headers, :body, :path
 
   def initialize(headers, body, path)
-    @nome = nome
+    @headers = headers
     @body = body
     @path = path
   end
