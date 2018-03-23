@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Info Page</title>
+   </head>
+   <body>
+      <h1>Frango Robo</h1>
+      <form method="POST" action="/request">
+         <p>
+            <select name="request_method">
+               <option value="post">Post</option>
+               <option value="get">Get</option>
+               <option value="delete">Delete</option>
+               <option value="put">Put</option>
+               <option value="patch">Patch</option>
+            </select>
+         </p>
+         <p>path: <input type="text" name="path">
+         <p/>
+         <p>header: <input type="text" name="headers"></p>
+         <p>body: <textarea rows="4" name="body" cols="50">
+            </textarea>
+         </p>
+         <input type="submit">
+      </form>
+   </body>
+</html>

@@ -1,9 +1,9 @@
 class SelectorRequest
 
   def self.selectRequest(type,request_method,headers,body,path)
-    
+
     if type.eql? "request"
-      request_return = RequestController.new(headers,body,path)
+      request_return = RequestController.new(type,headers,body,path)
     end
 
     if type.eql? "assert"
