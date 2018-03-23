@@ -5,7 +5,7 @@ class Requests
     rescue Exception => detail
       response = detail.response
     ensure
-      return ''
+      return response
     end
   end
 
@@ -15,7 +15,7 @@ class Requests
     rescue Exception => detail
       response = detail.response
     ensure
-      return Shind.generateResponse(response)
+      return response
     end
   end
 
@@ -25,7 +25,7 @@ class Requests
     rescue Exception => detail
       response = detail.response
     ensure
-      return Shind.generateResponse(response)
+      return response
     end
   end
 
@@ -35,7 +35,7 @@ class Requests
     rescue Exception => detail
       response = detail.response
     ensure
-      return Shind.generateResponse(response)
+      return response
     end
   end
 end
