@@ -65,7 +65,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  airborne
   sinatra
 
 BUNDLED WITH

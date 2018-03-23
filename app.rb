@@ -1,8 +1,5 @@
-require './config'
+require 'sinatra'
 
-describe 'frango' do
-  it "teste" do
-    get '/'
-    p response.code
+  get '/teste' do
+    p "teste"
   end
-end
