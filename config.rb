@@ -1,10 +1,7 @@
-require 'airborne'
+require 'sinatra'
 
-Airborne.configure do |config|
-  config.base_url = 'http://google.com'
+
+configure do
+  Sample = "test"
+  Version = Sinatra::VERSION
 end
-
-ExpectationNotMetError = RSpec::Expectations::ExpectationNotMetError
-ExpectationError       = Airborne::ExpectationError
-InvalidJsonError       = Airborne::InvalidJsonError
-PathError = Airborne::PathError

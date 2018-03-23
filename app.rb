@@ -1,8 +1,9 @@
-require './config'
+require 'sinatra'
+require 'json'
 
-describe 'frango' do
-  it "teste" do
-    get '/'
-    p response.code
-  end
+
+set :bind, '0.0.0.0'
+
+get '/' do
+  'Frango robo'
 end

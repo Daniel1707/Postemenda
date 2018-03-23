@@ -1,4 +1,10 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem 'airborne'
+gem 'rack'
+gem 'rack-test'
 gem 'sinatra'
+
+
+group :development do
+  gem 'pry-byebug'
+end
