@@ -10,11 +10,6 @@
    <body>
       <h1>Frango Robo</h1>
 
-      <div class="input_fields_wrap">
-        <button class="add_field_button">Add More Fields</button>
-        <div><input type="text" name="mytext[]"></div>
-      </div>
-
       <form method="POST" action="/request">
          <p>
             <select name="request_method">
@@ -25,6 +20,11 @@
                <option value="patch">Patch</option>
             </select>
          </p>
+
+         <div class="input_fields_wrap">
+             <button class="add_field_button">Add More Fields</button>
+         </div>
+
          <p>path: <input type="text" name="path">
          <p/>
          <!-- <p>header: <input type="text" name="post[headers][autenticacao]"></p>
