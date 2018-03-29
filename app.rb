@@ -3,7 +3,6 @@ require 'json'
 require './controllers/request_controller'
 require './controllers/script_controller'
 
-
 set :bind, '0.0.0.0'
 set :public_folder, Proc.new { File.join(File.dirname(__FILE__), 'public') }
 
