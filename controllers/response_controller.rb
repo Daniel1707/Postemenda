@@ -4,12 +4,22 @@ class ResponseController
 
 def self.process_response(response)
   json = { body: JSON.parse(response.body), code: response.code, detail: response }
-
+  y = []
+  if json[:body].is_a? (Array)
+    json[:body].size.times do |i|
+      x = instance_json_object(json[:body][i])
+      y << x
+      p y
+    end
+    return y
+  else
+    return instance_json_object(json[:body])
+  end
   p json[:body]
 
   p instance_json_object(json[:body])
 
-  return instance_json_object(json[:body])
+
 end
 
 def self.instance_json_object(json)

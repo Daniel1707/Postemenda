@@ -12,9 +12,16 @@ class Requests
     rescue Exception => detail
       response = detail.response
     ensure
-      response_1 = ResponseController.process_response(response)
 
-      return response
+      #teste = Requests.iterate_array_json(response)
+      response_all = ResponseController.process_response(response)
+      #return response_all
+    end
+  end
+
+  def self.iterate_array_json(json)
+    json.length.times do |i|
+      i
     end
   end
 end
