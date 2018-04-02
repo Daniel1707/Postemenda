@@ -1,4 +1,5 @@
 require_relative '../lib/converter'
+require_relative '../database/file'
 
 class ScriptController
 
