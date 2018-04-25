@@ -1,73 +1,83 @@
 <html lang="en">
-<head>
-  <title>Add Remove input fields dynamically using jQuery bootstrap</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/function.js"></script>
-    <style>
-    body {
-    padding: 30px;
-}
-    </style>
-</head>
-<body>
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default template">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-            Informations about tests
-          </a>
-        </h4>
-      </div>
-      <div id="collapseThree" class="panel-collapse collapse">
-        <div class="panel-body">
-            <form method="POST" action="/request">
-               <p>
-                  <select name="request_method">
-                     <option value="post">Post</option>
-                     <option value="get">Get</option>
-                     <option value="delete">Delete</option>
-                     <option value="put">Put</option>
-                     <option value="patch">Patch</option>
-                  </select>
-                  <input type="text" name="path" size=100>
-               <p/>
-
-               <div class="input_fields_wrap">
-                   <button class="add_field_button">Add Header</button>
+   <head>
+      <title>Add Remove input fields dynamically using jQuery bootstrap</title>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="js/function.js"></script>
+      <style>
+         body {
+         padding: 30px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="panel-group" id="accordion">
+         <div class="panel panel-default template">
+            <div class="panel-heading">
+               <h4 class="panel-title">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                  Informations about tests
+                  </a>
+               </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+               <div class="panel-body">
+                  <div class="tabs-container">
+                     <input type="radio" name="tabs" class="tabs" id="tab1" checked>
+                     <label for="tab1">Request</label>
+                     <div>
+                        <form method="POST" action="/request">
+                           <p>
+                              <select name="request_method">
+                                 <option value="post">Post</option>
+                                 <option value="get">Get</option>
+                                 <option value="delete">Delete</option>
+                                 <option value="put">Put</option>
+                                 <option value="patch">Patch</option>
+                              </select>
+                              <input type="text" name="path" size=100>
+                           <p/>
+                           <div class="input_fields_wrap">
+                              <button class="add_field_button">Add Header</button>
+                           </div>
+                           <p><textarea rows="10" name="body" cols="110" placeholder="Body Data"></textarea>
+                           </p>
+                           <input type="submit" value="Send">
+                        </form>
+                     </div>
+                     <input type="radio" name="tabs" class="tabs" id="tab3">
+                     <label for="tab3">Script</label>
+                     <div>
+                        <div>
+                           <form method="POST" action="/script">
+                              <p><textarea rows="10" name="script" cols="110" placeholder="Script"></textarea></p>
+                              <input type="submit" value="Send">
+                           </form>
+                        </div>
+                     </div>
+                  </div>
                </div>
-               <p><textarea rows="4" name="body" cols="110" placeholder="Body Data"></textarea>
-               </p>
-               <input type="submit" value="Send">
-            </form>
-            <form method="POST" action="/script">
-              <p><textarea rows="10" name="script" cols="110" placeholder="Script"></textarea></p>
-              <input type="submit" value="Send">
-            </form>
-        </div>
+            </div>
+         </div>
       </div>
-    </div>
-  </div>
-  <br />
-  <button class="btn btn-lg btn-primary btn-add-panel">
+      <br />
+      <button class="btn btn-lg btn-primary btn-add-panel">
       <i class="glyphicon glyphicon-plus"></i> Add new step
-  </button>
-<script type="text/javascript">
+      </button>
+      <script type="text/javascript">
+         var $template = $(".template");
 
-var $template = $(".template");
-
-var hash = 0;
-$(".btn-add-panel").on("click", function () {
-    var $newPanel = $template.clone();
-    $newPanel.find(".collapse").removeClass("in");
-    $newPanel.find(".accordion-toggle").attr("href",  "#" + (++hash))
-             .text("Step " + hash);
-    $newPanel.find(".panel-collapse").attr("id", hash).addClass("collapse").removeClass("in");
-    $("#accordion").append($newPanel.fadeIn());
-});
-</script>
-
-</body>
+         var hash = 0;
+         $(".btn-add-panel").on("click", function () {
+             var $newPanel = $template.clone();
+             $newPanel.find(".collapse").removeClass("in");
+             $newPanel.find(".accordion-toggle").attr("href",  "#" + (++hash))
+                      .text("Step " + hash);
+             $newPanel.find(".panel-collapse").attr("id", hash).addClass("collapse").removeClass("in");
+             $("#accordion").append($newPanel.fadeIn());
+         });
+      </script>
+   </body>
 </html>
