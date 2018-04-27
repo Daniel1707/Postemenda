@@ -3,6 +3,10 @@ require 'json'
 class ResponseController
 
 def self.process_response(response)
+
+  @contador = 1
+  @step_number = @contador + 1
+
   json = { body: JSON.parse(response.body), code: response.code, detail: response }
   y = []
   if json[:body].is_a? (Array)
@@ -13,7 +17,10 @@ def self.process_response(response)
     end
     return y
   else
-    return instance_json_object(json[:body])
+    response = instance_json_object(json[:body])
+    file = FileCreator.new(@step_number,response)
+
+    return response
   end
   p json[:body]
 
